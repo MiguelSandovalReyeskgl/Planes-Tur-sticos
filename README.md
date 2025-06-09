@@ -88,11 +88,11 @@ Actualmente puedes integrarlo fácilmente si aún no lo has hecho.
 
 📷 Capturas del Sistema
 -----------------------
+![Tabla de planes](KANT1.png)
+![Gestión de administrador](KANT3.png)
 
 
 
-```markdown
 
-![Tabla de planes](imagenes/tabla_planes.png)
-![Gestión de administrador](imagenes/admin_editar.png)
+
 
