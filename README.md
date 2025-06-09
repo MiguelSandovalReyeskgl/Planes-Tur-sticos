@@ -7,7 +7,7 @@ AppKant: Tienda de Planes Turísticos
 👉 [Ver en YouTube](https://youtu.be/Pp1ZxmI0CH8)
 
 ---
-
+![Pantalla principal](KANT2.png)
 🧭 Estructura del Proyecto
 --------------------------
 
@@ -92,7 +92,7 @@ Actualmente puedes integrarlo fácilmente si aún no lo has hecho.
 
 
 ```markdown
-![Pantalla principal](imagenes/menu_principal.png)
+
 ![Tabla de planes](imagenes/tabla_planes.png)
 ![Gestión de administrador](imagenes/admin_editar.png)
 
