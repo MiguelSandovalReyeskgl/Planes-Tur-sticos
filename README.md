@@ -1,4 +1,4 @@
-AppKant: Tienda de Planes Turísticos
+Equipo 18: AppKant Planes Turísticos
 ====================================
 
 **AppKant** es una aplicación de escritorio desarrollada en **Java** con interfaz gráfica basada en `Swing`, diseñada para gestionar y vender planes turísticos. El sistema está dividido en dos módulos principales: **Administrador** y **Recepcionista**, cada uno con sus propias funciones y responsabilidades dentro de la aplicación.
