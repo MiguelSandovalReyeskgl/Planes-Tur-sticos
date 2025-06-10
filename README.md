@@ -324,6 +324,24 @@ btnLogin.addActionListener(e -> {
 - Visualizar los planes cargados desde la base de datos. Por las otras claes para que pueda ser modificado
 
 
+## `modificar.java` 
+
+- Visualización de trabajadores en una tabla personalizada.
+- Carga eficiente de imágenes solo al seleccionar un trabajador.
+- Selección de trabajadores mediante `JRadioButton`.
+
+
+## Componentes clave
+
+- `construirTabla2`: Método que carga y muestra todos los trabajadores en una tabla con imágenes y `JRaddioButton`.
+
+
+## Uso
+
+
+- Visualizar los trabajadoress cargados desde la base de datos. Por las otras claes para que pueda ser modificado (igual que coin los planes solo que esta vez es con el trabajador), funciona con recepcionistas
+y con administradores, con todos los trabajadores.
+
 
 
 ---
@@ -346,13 +364,13 @@ git clone https://github.com/usuario/AppKant.git
 ##  Capturas del Sistema
 
 ### Vista del Recepcionista
-![Tabla de planes turísticos](KANT1.png)
+![Tabla de planes turísticos](ImagenesUsadas/KANT1.png)
 
 ### Selección con Imagen y Total
-![Vista dinámica de imagen](KANT2.png)
+![Vista dinámica de imagen](ImagenesUsadas/KANT2.png)
 
 ### Módulo Administrador
-![Gestión del administrador](KANT3.png)
+![Gestión del administrador](ImagenesUsadas/KANT3.png)
 
 ---
 
