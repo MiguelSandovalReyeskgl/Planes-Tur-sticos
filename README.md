@@ -388,4 +388,4 @@ git clone https://github.com/usuario/AppKant.git
 
 ------
 # Video de youtube explicativo
-[https://youtu.be/rBGDjPXXXeE](https://youtu.be/rBGDjPXXXeE)
+https://youtu.be/Pp1ZxmI0CH8?si=r0pk3VIfMKFc7aqj
