@@ -223,13 +223,13 @@ public class Conexion {
 
 `Conector.java` actúa como una **superclase base** para cualquier módulo que necesite acceso directo a la base de datos. Internamente, obtiene la conexión llamando al método de `Conexion.java`, por lo que cualquier clase que herede de `Conector` ya tiene acceso a la base sin configuraciones adicionales.
 
-#### ✅ ¿Qué hace?
+####  ¿Qué hace?
 - Contiene un atributo `protected Connection con` para ser reutilizado por subclases.
 - Llama automáticamente a `Conexion.getConnection()` desde el constructor.
 - Muestra un mensaje de error si no logra conectarse (con `JOptionPane` para feedback visual inmediato).
 - Fomenta la **herencia estructurada** entre módulos.
 
-#### 🔍 Fragmento de código representativo:
+####  Fragmento de código representativo:
 ```java
 public class Conector {
     protected Connection con;
@@ -296,16 +296,35 @@ btnLogin.addActionListener(e -> {
 
 ---
 
- Estas clases no se ven directamente por el usuario final, pero son esenciales para que la aplicación funcione de forma robusta, ordenada y extensible.
+ 
+## `modificarplan.java` 
 
-------
-##  Tecnologías Usadas
+- Visualización de planes en una tabla personalizada.
+- Carga eficiente de imágenes solo al seleccionar un plan.
+- Selección de planes mediante `JCheckBox`.
+- Suma dinámica del precio de los planes seleccionados.
+- Visualización de imagen del plan seleccionado en un `JPanel` (`imaPanel`).
+- Generación de un PDF con los detalles de los planes seleccionados.
+- Diseño responsivo dentro de los límites de Java Swing.
+- Posibilidad de filtrado sin perder diseño visual.
 
-- Java 8 o superior
-- Swing (`JFrame`, `JPanel`, `JButton`, `JLabel`, etc.)
-- SQLite + JDBC
-- IDE: NetBeans o IntelliJ IDEA
-- Arquitectura simple por capas
+## Componentes clave
+
+- `construirTablaPlanes2`: Método que carga y muestra todos los planes en una tabla con imágenes y `JCheckBox`.
+- `filtrarPlanes2`: Método que permite filtrar los planes manteniendo el diseño original de la tabla.
+- `imaPanel`: Panel donde se muestra la imagen del plan seleccionado.
+- `JLabel total`: Muestra la suma total de los planes seleccionados.
+- `JCheckBox`: Permite la selección de planes, cada uno con su propio precio.
+- Listener personalizado: Cada `JCheckBox` suma o resta el precio al total y cambia la imagen mostrada en `imaPanel`.
+
+
+## Uso
+
+
+- Visualizar los planes cargados desde la base de datos. Por las otras claes para que pueda ser modificado
+
+
+
 
 ---
 
