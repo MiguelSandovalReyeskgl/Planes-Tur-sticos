@@ -363,14 +363,15 @@ git clone https://github.com/usuario/AppKant.git
 
 ##  Capturas del Sistema
 
-### Vista del Recepcionista
+### Vista del Administrador
 ![Tabla de planes turísticos](ImagenesUsadas/KANT1.png)
 
-### Selección con Imagen y Total
+### Login
 ![Vista dinámica de imagen](ImagenesUsadas/KANT2.png)
 
-### Módulo Administrador
+### Vista del recepcionista
 ![Gestión del administrador](ImagenesUsadas/KANT3.png)
+
 
 ---
 
@@ -379,15 +380,12 @@ git clone https://github.com/usuario/AppKant.git
 
 ##  Créditos
 
-- **Equipo:** Equipo 18
+- **Equipo 18:** Sandoval Reyes Miguel
 - **Proyecto escolar:** AppKant — Venta de Planes Turísticos
-- **Institución:** [Nombre de tu escuela]
-- **Docente:** [Nombre del docente]
+
 
 ---
 
-## 🎥 Video de Demostración
-
-👉 [Ver en YouTube](https://youtu.be/TU_VIDEO)
-
-
+------
+# Video de youtube explicativo
+[https://youtu.be/rBGDjPXXXeE](https://youtu.be/rBGDjPXXXeE)
