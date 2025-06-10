@@ -1,4 +1,3 @@
-
 # Equipo 18: AppKant Planes Turísticos 🧭
 
 **AppKant** es una aplicación de escritorio desarrollada en **Java** con interfaz gráfica basada en `Swing`, diseñada para gestionar y vender **planes turísticos**. El sistema está dividido en dos módulos principales: **Administrador** y **Recepcionista**, cada uno con sus propias funciones y responsabilidades dentro de la aplicación.
@@ -26,6 +25,62 @@ El sistema se divide en dos capas funcionales:
 - Agrega, edita o elimina planes desde la base de datos.
 - Carga imágenes desde rutas internas o externas.
 - Permite a los administradores monitorear qué planes están disponibles y sus detalles.
+
+---
+
+## 🧱 Creación Dinámica de Tablas
+
+Ambos módulos usan métodos para construir las tablas de forma programática a partir de los datos de la base de datos. Estos métodos permiten que la interfaz sea completamente dinámica.
+
+### Método: `construirTablaPlanes(...)`
+
+Este método consulta los datos desde la tabla `Planes` y genera visualmente cada fila con sus columnas, incluyendo un `JCheckBox`, nombre, descripción, precio y la lógica de actualización de totales.
+
+```java
+private void construirTablaPlanes(JPanel panelPlanes) {
+    // Configuración inicial del panel
+    panelPlanes.setOpaque(true);
+    panelPlanes.removeAll();
+    panelPlanes.setLayout(new BoxLayout(panelPlanes, BoxLayout.Y_AXIS));
+
+    // Estructura de columnas
+    String[] columnas = {"", "Nombre", "Descripción", "Precio"};
+
+    // Encabezado
+    JPanel header = new JPanel(new GridLayout(1, columnas.length));
+    for (String col : columnas) {
+        JLabel lbl = new JLabel(col, JLabel.CENTER);
+        header.add(lbl);
+    }
+    panelPlanes.add(header);
+
+    // Carga desde base de datos
+    String query = "SELECT planesID, nombre, descripcion, precio, imagen FROM Planes";
+    // Se construye cada fila como un JPanel con su propia lógica
+}
+```
+
+Cada `JCheckBox` tiene su `ActionListener` que añade o elimina el ID del plan del mapa de seleccionados, recalcula el total y actualiza la imagen mostrada.
+
+---
+
+## 🔍 Filtrado Dinámico de la Tabla
+
+### Método: `filtrarPlanes(...)`
+
+Permite aplicar un filtro a los planes en tiempo real con base en el texto ingresado por el usuario. El criterio de búsqueda se determina usando `JRadioButton` para elegir entre nombre o descripción.
+
+```java
+String query = buscarPorDescripcion
+    ? "SELECT * FROM Planes WHERE descripcion LIKE ?"
+    : "SELECT * FROM Planes WHERE nombre LIKE ?";
+
+PreparedStatement stmt = conn.prepareStatement(query);
+stmt.setString(1, "%" + texto + "%");
+ResultSet rs = stmt.executeQuery();
+```
+
+Al igual que en la tabla sin filtrar, se reconstruyen los componentes Swing dinámicamente para reflejar los resultados en la UI.
 
 ---
 
@@ -62,21 +117,6 @@ AppKant utiliza **SQLite** como sistema de almacenamiento local.
 | `descripcion` | TEXT     | Descripción detallada del plan            |
 | `precio`      | DOUBLE   | Precio en formato decimal (ej. 1499.99)   |
 | `imagen`      | TEXT     | Ruta absoluta o relativa de la imagen     |
-
----
-
-## 🔍 Filtrado y Selección Dinámica
-
-```java
-String query = buscarPorDescripcion
-    ? "SELECT * FROM Planes WHERE descripcion LIKE ?"
-    : "SELECT * FROM Planes WHERE nombre LIKE ?";
-
-stmt.setString(1, "%" + texto + "%");
-ResultSet rs = stmt.executeQuery();
-```
-
-Los resultados se cargan dinámicamente en la tabla. Los checkboxes permiten seleccionar uno o varios planes al mismo tiempo.
 
 ---
 
